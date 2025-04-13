@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>Strona z ToDo listą</title>
+</head>
+<body>
+    <h1>Moja ToDo Lista</h1>
+    <div id="todo-form">
+        <input type="text" id="todo-input" placeholder="Wpisz zadanie..." />
+        <select id="list-selector">
+            <option value="low">Mało pilne</option>
+            <option value="medium">Pilne</option>
+            <option value="urgent">Na wczoraj</option>
+        </select>
+        <button id="add-btn">Dodaj</button>
+        <button id="undo-btn" disabled>Cofnij usunięcie</button>
+    </div>
+    <div id="confirm-modal" style="display: none;" class="modal-overlay">
+        <div class="modal-box">
+          <p id="modal-text">Czy na pewno chcesz usunąć zadanie o treści: ...?</p>
+          <div class="modal-actions">
+            <button id="confirm-delete">Tak</button>
+            <button id="cancel-delete">Anuluj</button>
+          </div>
+        </div>
+    </div>
+    <div class="todo-lists">
+        <div class="todo-section" id="list-low">
+            <h2 class="list-header">Mało pilne</h2>
+            <ul class="todo-list"></ul>
+        </div>
+        <div class="todo-section" id="list-medium">
+            <h2 class="list-header">Pilne</h2>
+            <ul class="todo-list"></ul>
+        </div>
+        <div class="todo-section" id="list-urgent">
+            <h2 class="list-header">Na wczoraj</h2>
+            <ul class="todo-list"></ul>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
