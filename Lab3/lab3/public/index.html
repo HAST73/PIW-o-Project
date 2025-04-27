@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Księgarnia cyfrowa</title>
+</head>
+<body>
+    <header>
+        <h1>Księgarnia cyfrowa</h1>
+        <div class="menu">
+            <button id="loginButton">Zaloguj</button>
+            <button id="cartButton">Koszyk</button>
+        </div>
+    </header>
+
+    <section id="filters">
+        <input type="text" id="searchInput" placeholder="Szukaj po tytule">
+        <select id="genreFilter">
+            <option value="">Wszystkie gatunki</option>
+            <option value="fantasy">Fantastyka</option>
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="psychological">Psychologiczna</option>
+            <option value="horror">Horror</option>
+            <option value="thriller">Thriller</option>
+            <option value="comedy">Komedia</option>
+            <option value="criminal">Kryminał</option>
+            <option value="romance">Romans</option>
+            <option value="biography">Biografia</option>
+        </select>
+        <button id="filterButton">Filtruj</button>
+    </section>
+
+    <section id="adder">
+        <button id="addBookButton">Dodaj nową książkę</button>
+    </section>
+
+    <section id="bookList">
+
+    </section>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
