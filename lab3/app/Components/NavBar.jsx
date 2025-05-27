@@ -5,7 +5,7 @@ export default function NavBar() {
     <nav>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/new">Add Book</NavLink>
-      <button>Login</button>
+      <NavLink to="/login">Login</NavLink>
     </nav>
   );
 }
