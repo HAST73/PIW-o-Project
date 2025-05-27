@@ -11,6 +11,12 @@ export default function Home() {
   const [userId, setUserId] = useState(null);
   const [showMine, setShowMine] = useState(false);
 
+  // Zabezpieczenie przed błędem SSR
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setUserId(user?.uid || null);
@@ -33,6 +39,9 @@ export default function Home() {
     b.title.toLowerCase().includes(queryText.toLowerCase()) &&
     (genre ? b.genre === genre : true)
   );
+
+  // Dopóki komponent nie zamontuje się w przeglądarce, nic nie renderuj
+  if (!hasMounted) return null;
 
   return (
     <div className="space-y-4">

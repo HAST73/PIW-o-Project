@@ -55,12 +55,12 @@ export default function Login() {
     <div className="space-y-4 p-4 max-w-md mx-auto">
       {user ? (
         <>
-          <p>Zalogowano jako: {user.displayName || user.email}</p>
-          <button onClick={logout}>Wyloguj się</button>
+          <p>Logged in as: {user.displayName || user.email}</p>
+          <button onClick={logout}>Log out</button>
         </>
       ) : (
         <>
-          <button onClick={handleGoogleLogin}>Zaloguj się przez Google</button>
+          <button onClick={handleGoogleLogin}>Log in with Google</button>
 
           <input
             placeholder="Email"
@@ -69,13 +69,13 @@ export default function Login() {
           />
           <input
             type="password"
-            placeholder="Hasło"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button onClick={handleEmailLogin}>Zaloguj się</button>
-          <button onClick={handleRegister}>Zarejestruj się</button>
+          <button data-cy="login-email" onClick={handleEmailLogin}>Log in</button>
+          <button onClick={handleRegister}>Register</button>
 
           {error && <p style={{ color: "red" }}>{error}</p>}
         </>
